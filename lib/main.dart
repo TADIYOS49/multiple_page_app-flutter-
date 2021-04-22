@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/widgets/categories_screen.dart';
+import 'package:mealsapp/widgets/category_meals_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,9 +26,13 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'RobotoCondensed',
                 fontWeight: FontWeight.bold,
               ))),
-      home: CategoryScreen(),
+      //home: CategoryScreen(),
       //to remove the debug banner on the application
       debugShowCheckedModeBanner: true,
+      routes: {
+        '/': (ctx) => CategoryScreen(),
+        CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
+      },
     );
   }
 }
