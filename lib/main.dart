@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/screens/categories_screen.dart';
 import 'package:mealsapp/screens/category_meals_screen.dart';
+import 'package:mealsapp/screens/meal_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,10 +29,20 @@ class MyApp extends StatelessWidget {
               ))),
       //home: CategoryScreen(),
       //to remove the debug banner on the application
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (ctx) => CategoryScreen(),
         CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      onGenerateRoute: (settings) {
+        //generate route enables u to create new pages instantly while in the cycle of the app's life.
+        print(settings.arguments); //to display the name
+        // return MaterialPageRoute(builder: (ctx) => CategoryScreen());
+      },
+      //unknown route is used to enable a fallback from last resort of the app.
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => CategoryScreen());
       },
     );
   }
