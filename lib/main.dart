@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/screens/categories_screen.dart';
 import 'package:mealsapp/screens/category_meals_screen.dart';
+import 'package:mealsapp/screens/favorite_screen.dart';
+import 'package:mealsapp/screens/filters_screen.dart';
 import 'package:mealsapp/screens/meal_detail_screen.dart';
 import 'package:mealsapp/screens/tabs_screen.dart';
 
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => TabsScreen(),
         CategoryMealScreen.routeName: (ctx) => CategoryMealScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FilterScreen.routeName:(ctx)=>FilterScreen(),
       },
       onGenerateRoute: (settings) {
         //generate route enables u to create new pages instantly while in the cycle of the app's life.
